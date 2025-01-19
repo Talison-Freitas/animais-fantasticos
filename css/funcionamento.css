@@ -1,0 +1,16 @@
+[data-semana] {
+  display: flex;
+  align-items: center;
+
+}
+[data-semana]::after {
+  display: inline-block;
+  content: "";
+  background:url("../img/X.svg");
+  width: 12px;
+  height: 12px;
+  margin-left: 0.3rem;
+}
+[data-semana].ativo::after{
+  background: url("../img/check.svg");
+}

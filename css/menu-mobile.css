@@ -1,0 +1,95 @@
+[data-menu="botao"] {
+  display: none;
+}
+@media (max-width: 700px) {
+  @keyframes show-left {
+    from {
+      opacity: 0;
+      transform: translate3d(30px, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0px, 0, 0);
+    }
+  }
+  .js .menu {
+    justify-items: right;
+  }
+  .js [data-menu="list"] {
+    display: none;
+  }
+  .js [data-menu="list"].ativo {
+    position: absolute;
+    background-color: #fb5;
+    display: block;
+    padding: 60px 0 20px 0px;
+    width: 160px;
+    right: 0px;
+    top: 0px;
+    z-index: 200;
+    animation: show-left .3s forwards;
+    box-shadow:  -2px 2px 2px 0px rgba(0, 0, 0, .1);
+    border-radius: 0 0 0 8px;
+  }
+  .js [data-menu="list"].ativo a {
+    padding-left: 20px;
+  }
+  .js [data-menu="botao"] {
+    position: relative;
+    right: 0px;
+    border: none;
+    background-color: #222;
+    font-family: "IBM Plex Mono", monospace;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 30px 10px 10px;
+    border-radius: 8px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 300;
+  }
+  .js [data-menu="botao"] span,
+  .js [data-menu="botao"] span::before,
+  .js [data-menu="botao"] span::after {
+    width: 16px;
+    height: 2px;
+    display: block;
+    background-color: white;
+    border-radius: 4px;
+    position: relative;
+  }
+  .js [data-menu="botao"].ativo span::before {
+    transform: rotate(130deg);
+    top: 0px;
+    transition: .3s;
+  }
+  .js [data-menu="botao"].ativo span::after {
+    transform: rotate(-130deg);
+    top: 0px;
+    transition: .3s;
+  }
+  .js [data-menu="botao"].ativo span {
+    background-color: #222;
+  }
+  .js .drop-down-menu {
+    position: static;
+    border: none;
+  }
+  .js [data-menu="botao"] span::before,
+  [data-menu="botao"] span:after {
+    display: block;
+    content: "";
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
+  .js [data-menu="botao"] span::before {
+    top: -4px;
+  }
+  .js [data-menu="botao"] span:after {
+    top: 4px;
+  }
+}
