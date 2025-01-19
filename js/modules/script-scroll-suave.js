@@ -1,22 +1,31 @@
-// Cria um scroll suave nos links internos do site
-export default function initSmothScroll() {
-  const linksInternos = document.querySelectorAll(
-    "[data-interface='menu'] a[href^='#']"
-  );
+export default class ScrollSuave {
+  constructor(links, options) {
+    this.linksInternos = document.querySelectorAll(links);
+    if (options === undefined) {
+      this.options = { top: "start", behavior: "smooth" };
+    } else {
+      this.options = options;
+    }
+    this.scrollToSection = this.scrollToSection.bind(this);
+  }
 
-  function scrollToSection(event) {
+  scrollToSection(event) {
     event.preventDefault();
     const href = event.currentTarget.getAttribute("href");
     const section = document.querySelector(href);
     const sectionTop = section.offsetTop;
     window.scrollTo(0, sectionTop);
-    window.scrollTo({
-      top: sectionTop,
-      behavior: "smooth",
+    window.scrollTo(this.options);
+  }
+  addLinkEvent() {
+    this.linksInternos.forEach((link) => {
+      link.addEventListener("click", this.scrollToSection);
     });
   }
-
-  linksInternos.forEach((link) => {
-    link.addEventListener("click", scrollToSection);
-  });
+  init() {
+    if (this.linksInternos.length) {
+      this.addLinkEvent();
+    }
+    return this;
+  }
 }
