@@ -6,7 +6,7 @@
 [data-semana]::after {
   display: inline-block;
   content: "";
-  background:url("../img/X.svg");
+  background: url("../img/x.svg");
   width: 12px;
   height: 12px;
   margin-left: 0.3rem;
