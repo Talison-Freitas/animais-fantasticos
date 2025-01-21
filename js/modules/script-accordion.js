@@ -19,6 +19,7 @@ export default class Accordion {
     if (this.faqDt.length) {
       this.addAccordionEvent();
       this.toggleDt(this.faqDt[0]);
+      return this;
     }
   }
 }

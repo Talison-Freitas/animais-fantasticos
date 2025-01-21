@@ -3,29 +3,30 @@ export default class Modal {
     this.modalContainer = document.querySelector(container);
     this.botaoAbrir = document.querySelector(botaoAbrir);
     this.botaoFechar = document.querySelector(botaoFechar);
+    // bind para fazer referência ao this da classe na função de callback
+    this.eventToggleModal = this.eventToggleModal.bind(this);
+    this.cliqueExternoModal = this.cliqueExternoModal.bind(this);
   }
-  toggleModal(event) {
-    event.preventDefault();
+  toggleModal() {
     this.modalContainer.classList.toggle("ativo");
+  }
+  eventToggleModal(event) {
+    event.preventDefault();
+    this.toggleModal(event);
   }
   cliqueExternoModal(event) {
     if (event.target === this.modalContainer)
       this.modalContainer.classList.remove("ativo");
   }
-  addEventsModal() {
-    this.modalContainer.addEventListener("click", (event) => {
-      this.cliqueExternoModal(event);
-    });
-    this.botaoFechar.addEventListener("click", (event) => {
-      this.toggleModal(event);
-    });
-    this.botaoAbrir.addEventListener("click", (event) => {
-      this.toggleModal(event);
-    });
+  addModalEvents() {
+    this.modalContainer.addEventListener("click", this.cliqueExternoModal);
+    this.botaoFechar.addEventListener("click", this.eventToggleModal);
+    this.botaoAbrir.addEventListener("click", this.eventToggleModal);
   }
   init() {
     if (this.modalContainer && this.botaoAbrir && this.botaoFechar) {
-      this.addEventsModal();
+      this.addModalEvents();
+      return this;
     }
   }
 }
