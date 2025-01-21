@@ -20,9 +20,10 @@ export default class TabNav {
     });
   }
   init() {
-    this.addTabEvent();
-    this.activeTab(0);
     if (this.tabMenu.length && this.tabContent.length) {
+      this.addTabEvent();
+      this.activeTab(0);
     }
   }
 }
+
