@@ -13,19 +13,19 @@ export default class Modal {
       this.modalContainer.classList.remove("ativo");
   }
   addEventsModal() {
-    if (this.modalContainer && this.botaoAbrir && this.botaoFechar) {
-      this.modalContainer.addEventListener("click", (event) => {
-        this.cliqueExternoModal(event);
-      });
-      this.botaoFechar.addEventListener("click", (event) => {
-        this.toggleModal(event);
-      });
-      this.botaoAbrir.addEventListener("click", (event) => {
-        this.toggleModal(event);
-      });
-    }
+    this.modalContainer.addEventListener("click", (event) => {
+      this.cliqueExternoModal(event);
+    });
+    this.botaoFechar.addEventListener("click", (event) => {
+      this.toggleModal(event);
+    });
+    this.botaoAbrir.addEventListener("click", (event) => {
+      this.toggleModal(event);
+    });
   }
   init() {
-    this.addEventsModal();
+    if (this.modalContainer && this.botaoAbrir && this.botaoFechar) {
+      this.addEventsModal();
+    }
   }
 }
