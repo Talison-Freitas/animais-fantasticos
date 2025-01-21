@@ -1,7 +1,7 @@
 import ScrollSuave from "./modules/script-scroll-suave.js";
 import initAnimacaoScroll from "./modules/script-scroll-animacao.js";
 import Accordion from "./modules/script-accordion.js";
-import initScrollNav from "./modules/script-nav-scroll.js";
+import ScrollNav from "./modules/script-nav-scroll.js";
 import TabNav from "./modules/script-tab-nav.js";
 import Modal from "./modules/script-animacao-modal.js";
 import initTooltip from "./modules/script-tooltip.js";
@@ -23,15 +23,19 @@ const tabNav = new TabNav(
 );
 tabNav.init();
 
-const modal = new Modal('[data-modal="container"]', '[data-modal="abrir"]', '[data-modal="fechar"]');
+const modal = new Modal(
+  '[data-modal="container"]',
+  '[data-modal="abrir"]',
+  '[data-modal="fechar"]'
+);
 modal.init();
 
+const scrollNav = new ScrollNav("[data-tab='content'] section", "[data-tab='menu']");
+scrollNav.init();
 initAnimacaoScroll();
-initScrollNav();
 initTooltip();
 initDropDownMenu();
 initMenuMobile();
 initFuncionamento();
 initFetchAnimais();
 initFetchBitcoin();
-
