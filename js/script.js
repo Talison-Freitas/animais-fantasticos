@@ -4,7 +4,7 @@ import Accordion from "./modules/script-accordion.js";
 import ScrollNav from "./modules/script-nav-scroll.js";
 import TabNav from "./modules/script-tab-nav.js";
 import Modal from "./modules/script-animacao-modal.js";
-import initTooltip from "./modules/script-tooltip.js";
+import Tooltip from "./modules/script-tooltip.js";
 import initDropDownMenu from "./modules/script-drop-down-menu.js";
 import initMenuMobile from "./modules/script-menu-mobile.js";
 import initFuncionamento from "./modules/script-funcionamento.js";
@@ -32,8 +32,11 @@ modal.init();
 
 const scrollNav = new ScrollNav("[data-tab='content'] section", "[data-tab='menu']");
 scrollNav.init();
+
+const tooltip = new Tooltip("[data-tooltip]");
+tooltip.init();
+
 initAnimacaoScroll();
-initTooltip();
 initDropDownMenu();
 initMenuMobile();
 initFuncionamento();
