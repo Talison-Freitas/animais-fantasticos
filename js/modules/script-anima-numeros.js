@@ -5,7 +5,7 @@ export default class AnimaNumeros {
     this.observeClass = observeClass;
     this.handleMutation = this.handleMutation.bind(this);
   }
-  incrementarNumero(numero) {
+  static incrementarNumero(numero) {
     const total = +numero.innerText;
     const incremento = total / 100;
     let start = 0;
@@ -20,7 +20,7 @@ export default class AnimaNumeros {
   }
   animaNumeros() {
     this.numeros.forEach((numero) => {
-      this.incrementarNumero(numero);
+      this.constructor.incrementarNumero(numero);
     });
   }
   addMutationObserver() {
