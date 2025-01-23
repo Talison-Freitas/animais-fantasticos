@@ -34,5 +34,6 @@ export default class FetchAnimais {
   }
   init() {
     this.fetchAnimais(this.url);
+    return this;
   }
 }

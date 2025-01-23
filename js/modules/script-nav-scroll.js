@@ -91,6 +91,7 @@ export default class ScrollNav {
   init() {
     if (this.menuLista && this.tabContent) {
       this.addNavScrollEvent();
+      return this;
     }
   }
 }
