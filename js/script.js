@@ -5,7 +5,7 @@ import ScrollNav from "./modules/script-nav-scroll.js";
 import TabNav from "./modules/script-tab-nav.js";
 import Modal from "./modules/script-animacao-modal.js";
 import Tooltip from "./modules/script-tooltip.js";
-import initDropDownMenu from "./modules/script-drop-down-menu.js";
+import DropdownMenu from "./modules/script-drop-down-menu.js";
 import initMenuMobile from "./modules/script-menu-mobile.js";
 import initFuncionamento from "./modules/script-funcionamento.js";
 import FetchAnimais from "./modules/script-fetch-animais.js";
@@ -45,7 +45,7 @@ fetchBitcoin.init();
 const animaScroll = new AnimaScroll("[data-anima='scroll']");
 animaScroll.init();
 
-
-initDropDownMenu();
+const dropdownMenu = new DropdownMenu("[data-dropdown]", ["click", "touchstart"]);
+dropdownMenu.init();
 initMenuMobile();
 initFuncionamento();
