@@ -1,20 +1,22 @@
+import debounce from "./script-debounce";
 // Cria uma animação baseada no scroll do usuário pelo site.
 export default class AnimaScroll {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
     this.windowMetade = window.innerHeight * 0.65;
-    this.checkDistance = this.checkDistance.bind(this);
+    this.checkDistance = debounce(this.checkDistance.bind(this), 50);
   }
   getDistance() {
     this.distance = [...this.sections].map((section) => {
       const offset = section.offsetTop;
       return {
         element: section,
-        offset: Math.floor(offset - this.windowMetade)
+        offset: Math.floor(offset - this.windowMetade),
       };
     });
   }
   checkDistance() {
+    console.log("teste");
     this.distance.forEach((section) => {
       if (window.scrollY > section.offset) {
         section.element.classList.add("ativo");
