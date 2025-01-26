@@ -18,6 +18,7 @@ body {
   background: #faf6ed;
   color: #222;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden
 }
 .grid-container {
   display: grid;
