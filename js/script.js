@@ -45,10 +45,10 @@ fetchBitcoin.init();
 const animaScroll = new AnimaScroll("[data-anima='scroll']");
 animaScroll.init();
 
-const dropdownMenu = new DropdownMenu("[data-dropdown]", ["click", "touchstart"]);
+const dropdownMenu = new DropdownMenu("[data-dropdown]");
 dropdownMenu.init();
 
-const menuMobile = new MenuMobile("[data-menu='botao']", "[data-menu='list']", ["click", "touchstart"]);
+const menuMobile = new MenuMobile("[data-menu='botao']", "[data-menu='list']");
 menuMobile.init();
 
 initFuncionamento();
