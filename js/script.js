@@ -7,7 +7,7 @@ import Modal from "./modules/script-animacao-modal.js";
 import Tooltip from "./modules/script-tooltip.js";
 import DropdownMenu from "./modules/script-dropdown-menu.js";
 import MenuMobile from "./modules/script-menu-mobile.js";
-import initFuncionamento from "./modules/script-funcionamento.js";
+import Funcionamento from "./modules/script-funcionamento.js";
 import FetchAnimais from "./modules/script-fetch-animais.js";
 import FetchBitcoin from "./modules/script-fetch-bitcoin.js";
 
@@ -51,4 +51,5 @@ dropdownMenu.init();
 const menuMobile = new MenuMobile("[data-menu='botao']", "[data-menu='list']");
 menuMobile.init();
 
-initFuncionamento();
+const funcionamento = new Funcionamento("[data-semana]", "ativo");
+funcionamento.init();
