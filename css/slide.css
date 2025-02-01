@@ -9,6 +9,7 @@
 .slide {
   display: flex;
   gap: 20px;
+  cursor:grab;
 }
 .slide:hover {
   will-change: transform;

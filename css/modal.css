@@ -14,13 +14,16 @@ z-index: 2000;
   display: flex;
 }
 .modal {
-  min-width: 300px;
+  width: 80vw;
+  max-width: 400px;
   background-color: white;
   padding: 40px;
   border: 10px solid #FB5;
+  box-sizing: border-box;
   border-radius: 4px;
   box-shadow: 0 0 0 10px white;
-  position: relative;
+  position: absolute;
+  top: 100px;
 }
 @keyframes abrirModal {
   from {
@@ -47,10 +50,17 @@ z-index: 2000;
   border-radius: 50%;
   background-color: #E54;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
-  font-size: 1.2rem;
-  color: white;
-  font-family: "IBM Plex Mono", monospace;
   cursor: pointer;
+}
+.fechar:hover {
+  background-color:  rgb(197, 70, 55);
+}
+.fechar span {
+  background: url("../img/close.svg") no-repeat center;
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
 }
 
 .modal label {

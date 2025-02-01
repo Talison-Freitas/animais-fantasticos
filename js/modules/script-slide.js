@@ -22,6 +22,7 @@ export class Slide {
     let moveType;
     if (event.type === "mousedown") {
       event.preventDefault();
+      this.slide.style.cursor = "grabbing";
       this.dist.startX = event.clientX;
       moveType = "mousemove";
     } else {
@@ -42,6 +43,7 @@ export class Slide {
   }
   onEnd(event) {
     const moveType = event.type === "mouseup" ? "mousemove" : "touchmove";
+    if (event.type === "mouseup") this.slide.style.cursor = "grab";
     this.slideWrapper.removeEventListener(moveType, this.onMove);
     this.dist.finalPosition = this.dist.movePosition;
     this.changeSlideOnEnd();

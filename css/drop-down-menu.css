@@ -5,15 +5,15 @@
   position: absolute;
   top: 38px;
   z-index: 200;
-  background-color: #E54;
+  background-color: #e54;
   border: 2px solid black;
   display: none;
 }
 [data-dropdown]:hover .drop-down-menu,
 [data-dropdown].ativo .drop-down-menu {
+  animation: animaMenu 0.3s forwards;
   display: block;
-  animation: animaMenu .3s forwards;
-} 
+}
 @keyframes animaMenu {
   from {
     opacity: 0;
@@ -30,10 +30,19 @@
   top: -10px;
   width: 0px;
   height: 0px;
-  border-bottom: 10px solid #E54;
+  border-bottom: 10px solid #e54;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
 .drop-down-menu a:hover {
   color: white;
+}
+@media(max-width: 700px) {
+  [data-dropdown] .drop-down-menu {
+    display: block;
+    animation: animaMenu 0.3s forwards;
+  }
+  [data-dropdown].ativo .drop-down-menu {
+    display: none;
+  }
 }
